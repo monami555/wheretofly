@@ -43,11 +43,11 @@ var SampleApp = function() {
         }
 
         //  Local cache for static content.
-        self.zcache['about.html'] = fs.readFileSync('./pages/about.html');
+        /*self.zcache['about.html'] = fs.readFileSync('./pages/about.html');
 		self.zcache['search.html'] = fs.readFileSync('./pages/search.html');
 		self.zcache['contact.html'] = fs.readFileSync('./pages/contact.html');
 		self.zcache['header.html'] = fs.readFileSync('./pages/header.html');
-		self.zcache['footer.html'] = fs.readFileSync('./pages/footer.html');
+		self.zcache['footer.html'] = fs.readFileSync('./pages/footer.html');*/
     };
 
 
@@ -99,7 +99,7 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
 
-        self.routes['/asciimo'] = function(req, res) {
+       /* self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
             res.send("<html><body><img src='" + link + "'></body></html>");
         };
@@ -108,37 +108,37 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('about.html') );
         };
-		
+
 		self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('about.html') );
         };
-		
+
 		self.routes['/search'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('search.html') );
         };
-		
+
 		self.routes['/contact'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('contact.html') );
         };
-		
+
 		self.routes['/about'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('about.html') );
         };
-		
+
 		self.routes['/header'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('header.html') );
         };
-		
+
 		self.routes['/footer'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('footer.html') );
-        };
-				
+        };*/
+
     };
 
 
@@ -154,7 +154,7 @@ var SampleApp = function() {
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
-		
+
 		//Add static content directories (temporary)
 		self.app.use("/scripts",express.static(__dirname + "/scripts"));
 		self.app.use("/css",express.static(__dirname + "/css"));
